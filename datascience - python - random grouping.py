@@ -148,43 +148,13 @@ def add_nan( df , dic_col_pct_nan ) :
 
 # [ I ] Random dataframe :
 
-# In[28]:
-
-
-df = rand_df( n_col_num = 3 , 
-              lst_par_col_str = [ ( 15 , 3 ) , ( 7 , 4 ) , ( 2 , 1 ) ] ,
-              n_rows = 500 )
-
-
-# In[30]:
-
-
-df.head( 20 )
-
-
-# In[63]:
-
-
-df = pd.get_dummies( df , columns = ['col_str_0' , 'col_str_1' ] )
-
-
-# In[64]:
-
-
-df.head()
-
-
 # ### Regroupements de modalités suivant variable cible
-
-# In[38]:
-
 
 df = rand_df( n_col_num = 3 , 
               lst_par_col_str = [ ( 25 , 3 ) , ( 7 , 4 ) , ( 2 , 1 ) ] ,
               n_rows = 500 )
 
-
-# In[69]:
+# !!! FONCTION RAND_GRP : regroupements aléatoires de modalités suivant variable cible !!!
 
 
 def rand_grp( df , col , target , n_trial_max , min_improve ):
@@ -317,9 +287,6 @@ def rand_grp( df , col , target , n_trial_max , min_improve ):
 
 
 # ### Test 
-
-# In[72]:
-
 
 rand_grp( df , 'col_str_0' , 'col_str_2' , 300 , 0.03 )
 
